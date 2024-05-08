@@ -10,7 +10,7 @@
 
 unsigned const int TMP36_DATA_PIN = 0;
 unsigned const int CHIP_SELECT_PIN = 10;
-unsigned const int PERIOD_SECONDS = 5;
+unsigned const int PERIOD_SECONDS = 60;
 float PERIOD_MAX_X = 0.0;
 float PERIOD_MAX_Y = 0.0;
 float PERIOD_MAX_Z = 0.0;
@@ -45,7 +45,7 @@ void setup() {
     accel.setMode(LSM303_MODE_LOW_POWER);
   }
 
-  Serial.println("Setup complete, begin logging data...");
+  Serial.print("Setup complete, logging data every "); Serial.print(PERIOD_SECONDS); Serial.println(" seconds");
 
   delay(2000);
 }
